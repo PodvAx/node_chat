@@ -10,7 +10,7 @@ async function createMessageHandler(wss, data) {
     });
   }
 
-  const user = usersRepository.getById(data.userId);
+  const user = await usersRepository.getById(data.userId);
 
   if (!user) {
     throw WsError.notFound({

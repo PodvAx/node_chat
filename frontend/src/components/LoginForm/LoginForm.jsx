@@ -5,7 +5,7 @@ import './LoginForm.css';
 
 export const LoginForm = () => {
   const [userName, setUserName] = useState(
-    localStorage.getItem('userName') || '',
+    localStorage.getItem('username') || '',
   );
   const { setUser } = useContext(UserContext);
 

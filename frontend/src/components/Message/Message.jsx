@@ -57,9 +57,9 @@ export const Message = ({ socket, message }) => {
     }
   };
 
-  const isDisabled = user.name !== 'admin' && message.user.name !== user.name;
+  const isDisabled = user.name !== 'admin' && message.authorId !== user.id;
   const messageClass = classNames('Message Chat__Message', {
-    'Message--me': message.user.id === user.id,
+    'Message--me': message.author.id === user.id,
     'Message--editable': user.name === 'admin',
   });
 
